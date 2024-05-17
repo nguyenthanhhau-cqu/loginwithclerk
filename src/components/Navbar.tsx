@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { UserButton, auth, useAuth } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs/";
+import {auth} from "@clerk/nextjs/server";
 
 const Navbar = async () => {
   // const { isLoaded, userId, sessionId, getToken } = useAuth();
-  const { userId } = await auth();
+  const { userId } = auth();
   const isAuth = !!userId;
 
   return (
